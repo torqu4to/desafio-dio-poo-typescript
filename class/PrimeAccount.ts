@@ -7,11 +7,13 @@ export class PrimeAccount extends DioAccount{
         super(name, accountNumber)
     }
 
-    depositExtra = (valueDeposit: number): void => {
+    depositBonus = (valueDeposit: number, bonus: number): void => {
         if(this.validateStatus()){
-            this.setNewBalance(valueDeposit)
+            const amount = valueDeposit + bonus
+            this.setNewBalance(amount)
+            // console.log(finalValue)
             console.log(`Depósito no valor de R$${valueDeposit} efetuado com sucesso!`)
-            console.log('Você ganhou um bônus de R$10,00 no seu depósito')
-          } 
+            console.log('Você ganhou um bônus de R$10,00 no seu depósito.')
+        } 
     }
 }
